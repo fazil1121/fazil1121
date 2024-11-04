@@ -8,13 +8,14 @@ const apiKey = import.meta.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI("AIzaSyDDZQ6EreE6In6T6cCYrwtv6YkQkidOI7Q");
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.0-pro",
+  model: "gemini-1.5-pro-002",
 });
 
 const generationConfig = {
-  temperature: 0.9,
-  topP: 1,
-  maxOutputTokens: 2048,
+  temperature: 1,
+  topP: 0.95,
+  topK: 40,
+  maxOutputTokens: 8192,
   responseMimeType: "text/plain",
 };
 
